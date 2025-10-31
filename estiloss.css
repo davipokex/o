@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #050505;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particula {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    animation: flotar linear forwards;
+}
+
+@keyframes flotar {
+    from {
+        transform: translateY(110vh);
+    }
+
+    to {
+        transform: translateY(-10vh);
+    }
+}
+
+header {
+    z-index: 1;
+    margin: 30px 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    z-index: 1;
+}
+
+.imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.imagenes img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.imagenes img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #fff, 0 0 40px #fff;
+}
+
+.video-container {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.video-container video:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #fff, 0 0 40px #fff;
+}
+
+@media (max-width: 768px) {
+    .imagenes img {
+        width: 45%;
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .imagenes img {
+        width: 90%;
+    }
+
+    .video-container {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
